@@ -1,19 +1,36 @@
 version: '3'
 services:
   # gateway
-  its__gateway:
-    build:
-      context: ./its__gateway/
-      dockerfile: ./its__gateway/Dockerfile
-    ports:
-      - '80:80'
+#  its-gateway:
+#    build:
+#      context: ./its__gateway/
+#      dockerfile: ./its__gateway/Dockerfile
+#    networks:
+#      - backend
+#    ports:
+#      - '9001:80'
 
   # databases
 
   # server microservices
-  its__ms__auth:
-    build:
-      context: ./its__auth/
-      dockerfile: ./its__auth/Dockerfile
+#  its-ms-auth:
+#    build:
+#      context: ./its__auth/
+#      dockerfile: ./its__auth/Dockerfile
+#    networks:
+#      - backend
 
   # client
+  its-client:
+    build:
+      context: ./its__client-web/
+      dockerfile: ./Dockerfile
+    networks:
+      - frontend
+    ports:
+      - '9000:3000'
+
+
+networks:
+  frontend:
+  backend:
