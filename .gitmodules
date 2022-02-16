@@ -1,0 +1,3 @@
+[submodule "its__client-web"]
+	path = its__client-web
+	url = git@github.com:iterations-is/its__client-web.git
