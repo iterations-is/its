@@ -1,0 +1,21 @@
+version: '3'
+services:
+  broker:
+    image: rabbitmq:3.9.13-alpine
+
+  # gateway
+#  its-gateway:
+#    build:
+#      context: ./its__gateway/
+#      dockerfile: ./its__gateway/Dockerfile
+#    networks:
+#      - backend
+#    ports:
+#      - '9001:80'
+
+  # databases
+
+
+networks:
+  frontend:
+  backend:
