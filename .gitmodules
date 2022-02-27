@@ -1,3 +1,6 @@
 [submodule "its__client-web"]
 	path = its__client-web
 	url = git@github.com:iterations-is/its__client-web.git
+[submodule "its__ms_auth"]
+	path = its__ms_auth
+	url = git@github.com:iterations-is/its__ms_auth.git
