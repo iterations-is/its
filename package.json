@@ -1,0 +1,10 @@
+{
+  "name": "its-boot",
+  "repository": "git@github.com:iterations-is/its.git",
+  "author": "Sergey Dunaevskiy <sergey@dunaevskiy.dev>",
+  "license": "MIT",
+  "scripts": {
+    "s:dev": "dc -f docker-compose.dev.yml up --build",
+    "s:prod": "dc -f docker-compose.prod.yml up --build"
+  }
+}
