@@ -1,17 +1,28 @@
 version: '3'
 services:
-#  broker:
-#    image: rabbitmq:3.9.13-alpine
+  broker:
+    image: rabbitmq:3.9.13-alpine
 
-  # gateway
+  db-relational:
+    image: postgres:14-alpine
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: its
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: db-its
+
+  db-document:
+    image: mongo:5.0.3
+    ports:
+      - '27017:27017'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: its
+      MONGO_INITDB_ROOT_PASSWORD: pass
+
   its-gateway:
     build:
       context: ./its__gateway/
       dockerfile: ./remote.Dockerfile
     ports:
       - '10000:80'
-
-networks:
-  frontend:
-  backend:
-
