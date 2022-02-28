@@ -4,7 +4,8 @@
   "author": "Sergey Dunaevskiy <sergey@dunaevskiy.dev>",
   "license": "MIT",
   "scripts": {
-    "s:dev": "dc -f docker-compose.dev.yml up --build",
-    "s:prod": "dc -f docker-compose.prod.yml up --build"
+    "s:dl": "docker-compose -f docker-compose.dev.local.yml up --build",
+    "s:dr": "docker-compose -f docker-compose.dev.remote.yml up --build",
+    "s:prod": "docker-compose -f docker-compose.prod.yml up --build"
   }
 }
