@@ -7,3 +7,6 @@
 [submodule "its__ms_users"]
 	path = its__ms_users
 	url = git@github.com:iterations-is/its__ms_users.git
+[submodule "its__ms_communication"]
+	path = its__ms_communication
+	url = git@github.com:iterations-is/its__ms_communication.git
