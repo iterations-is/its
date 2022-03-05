@@ -2,6 +2,13 @@ version: '3'
 services:
   broker:
     image: rabbitmq:3.9.13-alpine
+    ports:
+      - '4369:4369'
+      - '5671:5671'
+      - '5672:5672'
+      - '15672:15672'
+      - '15692:15692'
+      - '25672:25672'
 
   db-relational:
     image: postgres:14-alpine
