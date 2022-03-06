@@ -10,3 +10,12 @@
 [submodule "its__ms_communication"]
 	path = its__ms_communication
 	url = git@github.com:iterations-is/its__ms_communication.git
+[submodule "its__ms_logger"]
+	path = its__ms_logger
+	url = git@github.com:iterations-is/its__ms_logger.git
+[submodule "its__ms_interprets"]
+	path = its__ms_interprets
+	url = git@github.com:iterations-is/its__ms_interprets.git
+[submodule "its__ms_projects"]
+	path = its__ms_projects
+	url = git@github.com:iterations-is/its__ms_projects.git
