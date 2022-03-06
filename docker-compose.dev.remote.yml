@@ -20,12 +20,14 @@ services:
       POSTGRES_DB: db-its
 
   db-document:
-    image: mongo:5.0.3
-    ports:
-      - '27017:27017'
+    build: ./mongodb
     environment:
       MONGO_INITDB_ROOT_USERNAME: its
       MONGO_INITDB_ROOT_PASSWORD: pass
+      MONGO_REPLICA_HOST: localhost
+      MONGO_REPLICA_PORT: 27018
+    ports:
+      - '27018:27018'
 
   its-gateway:
     build:
