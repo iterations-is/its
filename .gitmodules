@@ -16,3 +16,6 @@
 [submodule "its__ms_monitoring"]
 	path = its__ms_monitoring
 	url = git@github.com:iterations-is/its__ms_monitoring.git
+[submodule "its__ms_projects"]
+	path = its__ms_projects
+	url = git@github.com:iterations-is/its__ms_projects.git
