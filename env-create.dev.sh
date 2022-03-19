@@ -2,7 +2,7 @@
 
 cp ./its__ms_auth/.env.example ./its__ms_auth/.env
 cp ./its__ms_communication/.env.example ./its__ms_communication/.env
-cp ./its__ms_interprets/.env.example ./its__ms_interprets/.env
+cp ./its__ms_interpreters/.env.example ./its__ms_interpreters/.env
 cp ./its__ms_monitoring/.env.example ./its__ms_monitoring/.env
 cp ./its__ms_projects/.env.example ./its__ms_projects/.env
 cp ./its__ms_users/.env.example ./its__ms_users/.env

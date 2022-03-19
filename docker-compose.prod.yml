@@ -49,7 +49,7 @@ services:
     depends_on:
       - its-ms-auth
       - its-ms-communication
-      - its-ms-interprets
+      - its-ms-interpreters
       - its-ms-monitoring
       - its-ms-projects
       - its-ms-users
@@ -81,14 +81,14 @@ services:
       - db-relational
       - broker
 
-  its-ms-interprets:
+  its-ms-interpreters:
     build:
-      context: ./its__ms_interprets/
+      context: ./its__ms_interpreters/
       dockerfile: ./Dockerfile
     networks:
       backend:
         aliases:
-          - interprets.ms
+          - interpreters.ms
     depends_on:
       - db-document
       - db-relational
