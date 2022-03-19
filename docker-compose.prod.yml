@@ -1,35 +1,106 @@
 version: '3'
 services:
-  # gateway
-#  its-gateway:
-#    build:
-#      context: ./its__gateway/
-#      dockerfile: ./its__gateway/Dockerfile
-#    networks:
-#      - backend
-#    ports:
-#      - '9001:80'
+  # Databases
+  db-relational:
+    image: postgres:14-alpine
+    environment:
+      POSTGRES_USER: its
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: db-its
+    networks:
+      backend:
+        aliases:
+          - postgres.s
 
-  # databases
+  db-document:
+    image: mongo:4
+    networks:
+      backend:
+        aliases:
+          - mongo.s
 
-  # server microservices
-#  its-ms-auth:
-#    build:
-#      context: ./its__auth/
-#      dockerfile: ./its__auth/Dockerfile
-#    networks:
-#      - backend
+  # Services
+  broker:
+    image: rabbitmq:3.9.13-alpine
+    networks:
+      backend:
+        aliases:
+          - broker.s
 
-  # client
   its-client:
     build:
       context: ./its__client-web/
       dockerfile: ./Dockerfile
-    networks:
-      - frontend
     ports:
       - '9000:3000'
+    networks:
+      - frontend
 
+  its-gateway:
+    build:
+      context: ./its__gateway/
+      dockerfile: ./prod.Dockerfile
+    ports:
+      - '10000:80'
+    networks:
+      backend:
+        aliases:
+          - gateway.s
+
+  # Microservices
+  its-ms-auth:
+    build:
+      context: ./its__ms_auth/
+      dockerfile: ./Dockerfile
+    networks:
+      backend:
+        aliases:
+          - auth.ms
+
+  its-ms-communication:
+    build:
+      context: ./its__ms_communication/
+      dockerfile: ./Dockerfile
+    networks:
+      backend:
+        aliases:
+          - communication.ms
+
+  its-ms-interprets:
+    build:
+      context: ./its__ms_interprets/
+      dockerfile: ./Dockerfile
+    networks:
+      backend:
+        aliases:
+          - interprets.ms
+
+  its-ms-monitoring:
+    build:
+      context: ./its__ms_monitoring/
+      dockerfile: ./Dockerfile
+    networks:
+      backend:
+        aliases:
+          - monitoring.ms
+
+  its-ms-projects:
+    build:
+      context: ./its__ms_projects/
+      dockerfile: ./Dockerfile
+    networks:
+      backend:
+        aliases:
+          - projects.ms
+
+  its-ms-users:
+    build:
+      context: ./its__ms_users/
+      dockerfile: ./Dockerfile
+    networks:
+      backend:
+        aliases:
+          - users.ms
 
 networks:
   frontend:

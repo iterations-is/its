@@ -1,15 +1,6 @@
 version: '3'
 services:
-  broker:
-    image: rabbitmq:3.9.13-alpine
-    ports:
-      - '4369:4369'
-      - '5671:5671'
-      - '5672:5672'
-      - '15672:15672'
-      - '15692:15692'
-      - '25672:25672'
-
+  # Databases
   db-relational:
     image: postgres:14-alpine
     ports:
@@ -24,9 +15,20 @@ services:
     ports:
       - '27017:27017'
 
+  # Services
+  broker:
+    image: rabbitmq:3.9.13-alpine
+    ports:
+      - '4369:4369'
+      - '5671:5671'
+      - '5672:5672'
+      - '15672:15672'
+      - '15692:15692'
+      - '25672:25672'
+
   its-gateway:
     build:
       context: ./its__gateway/
-      dockerfile: ./remote.Dockerfile
+      dockerfile: ./dev.Dockerfile
     ports:
       - '10000:80'
