@@ -46,6 +46,13 @@ services:
       backend:
         aliases:
           - gateway.s
+    depends_on:
+      - its-ms-auth
+      - its-ms-communication
+      - its-ms-interprets
+      - its-ms-monitoring
+      - its-ms-projects
+      - its-ms-users
 
   # Microservices
   its-ms-auth:
@@ -56,6 +63,10 @@ services:
       backend:
         aliases:
           - auth.ms
+    depends_on:
+      - db-document
+      - db-relational
+      - broker
 
   its-ms-communication:
     build:
@@ -65,6 +76,10 @@ services:
       backend:
         aliases:
           - communication.ms
+    depends_on:
+      - db-document
+      - db-relational
+      - broker
 
   its-ms-interprets:
     build:
@@ -74,6 +89,10 @@ services:
       backend:
         aliases:
           - interprets.ms
+    depends_on:
+      - db-document
+      - db-relational
+      - broker
 
   its-ms-monitoring:
     build:
@@ -83,6 +102,10 @@ services:
       backend:
         aliases:
           - monitoring.ms
+    depends_on:
+      - db-document
+      - db-relational
+      - broker
 
   its-ms-projects:
     build:
@@ -92,6 +115,10 @@ services:
       backend:
         aliases:
           - projects.ms
+    depends_on:
+      - db-document
+      - db-relational
+      - broker
 
   its-ms-users:
     build:
@@ -101,6 +128,10 @@ services:
       backend:
         aliases:
           - users.ms
+    depends_on:
+      - db-document
+      - db-relational
+      - broker
 
 networks:
   frontend:
