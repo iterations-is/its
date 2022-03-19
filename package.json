@@ -4,7 +4,11 @@
   "author": "Sergey Dunaevskiy <sergey@dunaevskiy.dev>",
   "license": "MIT",
   "scripts": {
-    "s:dev": "docker-compose -f docker-compose.dev.yml up --build",
-    "s:prod": "docker-compose -f docker-compose.prod.yml up --build"
+    "s:dev": "docker-compose -f docker-compose.dev.yml up --build -d",
+    "d:dev": "docker-compose -f docker-compose.dev.yml down",
+    "t:dev": "docker-compose -f docker-compose.dev.yml",
+    "s:prod": "docker-compose -f docker-compose.prod.yml up --build -d",
+    "d:prod": "docker-compose -f docker-compose.prod.yml down",
+    "t:prod": "docker-compose -f docker-compose.prod.yml"
   }
 }
