@@ -1,5 +1,6 @@
 #!/bin/sh
 
+cp ./its__client-web/.env.local.example ./its__client-web/.env.local
 cp ./its__ms_auth/.env.example ./its__ms_auth/.env
 cp ./its__ms_communication/.env.example ./its__ms_communication/.env
 cp ./its__ms_interpreters/.env.example ./its__ms_interpreters/.env
