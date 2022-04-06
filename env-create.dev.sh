@@ -10,5 +10,6 @@ cp ./its__ms_users/.env.example ./its__ms_users/.env
 
 echo ".env files copied but you still need to configure all files:"
 echo "  - 'its__ms_*/.env' - change IP addresses to the host running docker-compose.dev.yml"
+echo "  - 'its__client-web/.env.local' - add server domain"
 echo "  - 'its__ms_communication/.env' - add credentials for a email service"
-echo "  - 'its__ms_projects/.env' - add github token and other project related settings"
+echo "  - 'its__ms_projects/.env' - add github organization and token"
